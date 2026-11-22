@@ -24,7 +24,7 @@ spec:
               topologyKey: kubernetes.io/hostname
       containers:
         - name: portal
-          image: localhost/portal-489:1.1
+          image: localhost/portal-489:1.2
           imagePullPolicy: Never
           ports:
             - containerPort: 80
