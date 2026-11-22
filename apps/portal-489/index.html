@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Portal - 489</title>
+<style>
+body {
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+.card {
+    background:#1e293b;
+    padding:40px;
+    border-radius:15px;
+    max-width:600px;
+    margin:auto;
+}
+h1 {color:#38bdf8}
+.error {color:#fca5a5}
+</style>
+</head>
+<body>
+<div class="card">
+    <h1>Student Portal</h1>
+    <h2>Kubernetes Examination</h2>
+    <p>Student ID: <span id="student_id">68130489</span></p>
+    <p>Name: <span id="name">อรรถพล พวงทิพย์วรรณ</span></p>
+    <p>Kubernetes Cluster: <span id="cluster">3 Nodes</span></p>
+    <p>Control Plane: <span id="control_plane">1 Node</span></p>
+    <p>Worker Nodes: <span id="worker_nodes">2 Nodes</span></p>
+    <p id="status"></p>
+</div>
+
+<script>
+async function loadPortal() {
+    try {
+        const response = await fetch("/portal-data", {
+            cache: "no-store"
+        });
+
+        if (!response.ok) {
+            throw new Error("API unavailable");
+        }
+
+        const data = await response.json();
+
+        for (const key of [
+            "student_id",
+            "name",
+            "cluster",
+            "control_plane",
+            "worker_nodes"
+        ]) {
+            document.getElementById(key).textContent =
+                data[key] ?? "";
+        }
+    } catch (error) {
+        document.getElementById("status").textContent =
+            "ไม่สามารถโหลดข้อมูลล่าสุดได้";
+        document.getElementById("status").className = "error";
+    }
+}
+
+loadPortal();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit Student Portal | ID-489</title>
+<style>
+* {box-sizing:border-box}
+body {
+    margin:0;
+    background:#0f172a;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+.container {
+    max-width:750px;
+    margin:50px auto;
+    padding:25px;
+}
+h1 {color:#38bdf8}
+.panel {
+    background:#1e293b;
+    padding:30px;
+    border-radius:16px;
+    border:1px solid #334155;
+}
+label {
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+}
+input {
+    width:100%;
+    padding:13px;
+    background:#0f172a;
+    color:white;
+    border:1px solid #475569;
+    border-radius:8px;
+    font-size:16px;
+}
+button, a {
+    display:inline-block;
+    padding:13px 22px;
+    margin-top:22px;
+    border:0;
+    border-radius:8px;
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+}
+button {background:#059669;cursor:pointer}
+a {background:#0284c7}
+.success {
+    padding:15px;
+    background:#064e3b;
+    color:#6ee7b7;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+</style>
+</head>
+<body>
+<main class="container">
+    <h1>Edit Student Portal</h1>
+    <p>Student Information Management | ID-489</p>
+
+    <div class="panel">
+        {% if saved %}
+        <div class="success">บันทึกข้อมูลสำเร็จ</div>
+        {% endif %}
+
+        <form method="POST" action="/edit-portal">
+            <label>รหัสนักศึกษา</label>
+            <input name="student_id"
+                   value="{{ portal.student_id }}" required>
+
+            <label>ชื่อ-นามสกุล</label>
+            <input name="name"
+                   value="{{ portal.name }}" required>
+
+            <label>Kubernetes Cluster</label>
+            <input name="cluster"
+                   value="{{ portal.cluster }}" required>
+
+            <label>Control Plane</label>
+            <input name="control_plane"
+                   value="{{ portal.control_plane }}" required>
+
+            <label>Worker Nodes</label>
+            <input name="worker_nodes"
+                   value="{{ portal.worker_nodes }}" required>
+
+            <button type="submit">บันทึกข้อมูล</button>
+            <a href="/">กลับหน้า Admin</a>
+            <a href="http://www.iam-489.com/">
+                ดู Student Portal
+            </a>
+        </form>
+    </div>
+</main>
+</body>
+</html>
+

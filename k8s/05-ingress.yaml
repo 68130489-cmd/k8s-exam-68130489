@@ -1,0 +1,63 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-489
+  namespace: id-489
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: www.id-489.com
+      http:
+        paths:
+          - path: /about
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-about
+                port:
+                  number: 80
+          - path: /research
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-research
+                port:
+                  number: 80
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-api
+                port:
+                  number: 80
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: svc-about
+                port:
+                  number: 80
+    - host: admin.iam-489.com
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: svc-research
+                port:
+                  number: 80
+          - path: /edit
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-research
+                port:
+                  number: 80
+          - path: /edit-portal
+            pathType: Exact
+            backend:
+              service:
+                name: svc-research
+                port:
+                  number: 80

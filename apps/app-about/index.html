@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kubernetes Platform | ID-489</title>
+<style>
+* {box-sizing:border-box}
+body {
+    margin:0;
+    background:#0f172a;
+    color:#f8fafc;
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.container {
+    width:90%;
+    max-width:950px;
+    padding:40px;
+}
+.tag {
+    color:#38bdf8;
+    letter-spacing:3px;
+    font-size:13px;
+}
+h1 {
+    font-size:48px;
+    margin-bottom:10px;
+}
+.subtitle {
+    color:#94a3b8;
+    line-height:1.7;
+}
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+    margin-top:35px;
+}
+.card {
+    display:block;
+    padding:28px;
+    background:#1e293b;
+    border:1px solid #334155;
+    border-radius:16px;
+    text-decoration:none;
+    color:white;
+    transition:0.2s;
+}
+.card:hover {
+    transform:translateY(-5px);
+    border-color:#38bdf8;
+}
+.card h2 {
+    color:#38bdf8;
+    margin-top:0;
+}
+.card p {
+    color:#cbd5e1;
+    line-height:1.6;
+}
+footer {
+    margin-top:40px;
+    color:#64748b;
+    text-align:center;
+    font-size:14px;
+}
+</style>
+</head>
+<body>
+<main class="container">
+    <div class="tag">KUBERNETES APPLICATION PLATFORM</div>
+    <h1>Service Dashboard</h1>
+    <p class="subtitle">
+        ระบบให้บริการ Web Application บน Kubernetes Cluster<br>
+        Computer Engineering | Student ID 68130489
+    </p>
+
+    <div class="grid">
+        <a class="card" href="/about/">
+            <h2>01. About Me</h2>
+            <p>ข้อมูลส่วนตัวและประวัตินักศึกษา</p>
+        </a>
+
+        <a class="card" href="/research">
+            <h2>02. Research</h2>
+            <p>งานวิจัยการประเมิน Network Latency ด้วย TWAMP</p>
+        </a>
+
+        <a class="card" href="/api/Hello-Kubernetes">
+            <h2>03. API Service</h2>
+            <p>ทดสอบการรับและแสดงข้อความผ่าน URL</p>
+        </a>
+
+        <a class="card" href="http://admin.id-489.com/edit">
+            <h2>04. Admin Portal</h2>
+            <p>แก้ไขและจัดการข้อมูลสรุปงานวิจัย</p>
+        </a>
+    </div>
+
+    <footer>
+        Kubernetes Ingress Assignment | ID-489
+    </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+*.tar
+*.log
+*.pyc
+__pycache__/
+.env
+.venv/
+*.pem
+*.key
+kubeconfig
+.ssh/
+
+# Backup files
+*.bak
+*backup*.yaml
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Secrets and local environments
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+kubeconfig
